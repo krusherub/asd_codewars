@@ -1,0 +1,62 @@
+public class Kata
+{
+  public static string Rot13(string message)
+    {
+        char[] charStr = message.ToCharArray();
+
+        string alpha1 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+        string alpha2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        for (int i = 0; i < message.Length; i++)
+        {
+            if (check(message[i]) == 1)
+            {
+                //Console.WriteLine(alpha1[i]);
+                charStr[i] = alpha1[find(charStr[i]) + 13];
+            }
+            if (check(message[i]) == 2)
+            {
+                charStr[i] = alpha2[find(charStr[i])+13];
+            }
+            if (check(message[i]) == 0)
+                continue;
+        }
+        message = new string(charStr);
+    return message;
+       }
+  public static int check(char input){
+    string alpha1 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+    string alpha2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    for(int i = 0; i < alpha1.Length; i++)
+{
+    if ( alpha1[i] == input)
+    {
+        return 1;
+    }
+      if ( alpha2[i] == input)
+    {
+        return 2;
+    }
+}
+    return 0;
+  }
+  public static int find(char input)
+    {
+        string alpha1 = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+        string alpha2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        for (int i = 0; i < alpha1.Length; i++)
+        {
+            if (alpha1[i] == input)
+            {
+                return i;
+            }
+            if (alpha2[i] == input)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+}
