@@ -1,0 +1,50 @@
+using System;
+public class Kata
+{
+  public static int[] MoveZeroes(int[] arr)
+  {
+    int i = 0;
+  /*  */
+    
+  while(!check(arr)){
+    i = 0;
+    for(; i < arr.Length; i++){
+      
+      if(arr[i] == 0 && i != arr.Length -1){
+        arr[i] = arr[i+1];
+        arr[i+1] = 0;
+      }
+    }
+    }
+    foreach(int j in arr)
+      Console.WriteLine(j);
+    return arr;
+    
+  }
+    
+    
+   
+  
+  public static bool check(int[] arr)
+    {
+        int sum = 0;
+        foreach (int i in arr)
+        {
+            if (i == 0)
+                sum++;
+        }
+        int total = sum;
+        
+        for (int j = arr.Length -1 ; j > arr.Length - 1 - total; j--)
+        {
+            if (arr[j] == 0)
+                sum--;
+        }
+       
+        if (sum == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+  }
