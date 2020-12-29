@@ -1,0 +1,23 @@
+// c# algorithms 
+public class Kata
+{
+  public static bool Alphanumeric(string str)
+  {
+     char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".ToCharArray();
+    int sum = 0;
+    if(str.Length == 0)
+      return false;
+    foreach(char i in str){
+      foreach(char a in alpha){
+        if(i == a){
+          sum ++;
+        }
+      }
+    
+    }
+    if(sum != str.Length){
+      return false;
+    }
+    return true;
+  }
+}
