@@ -1,0 +1,16 @@
+using System;
+public class Kata
+{
+  public static bool Narcissistic(int value)
+  {
+    string text = value.ToString();
+    int sum = 0;
+    foreach(char i in text ){
+      sum += (int)Math.Pow(int.Parse(i.ToString()),text.Length);
+    }
+     if(sum == value){
+       return true;
+     } 
+    return false;
+  }
+}
