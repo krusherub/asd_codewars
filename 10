@@ -1,0 +1,27 @@
+using System.Linq;
+using System;
+public static class Kata 
+{
+  public static bool XO (string input)
+  {
+   // List<char> x = new List<char>{'x','X'};
+   // List<char> x = new List<char>{'O','o'};
+    int sum1 = 0;
+    int sum2 = 0;
+    foreach(char i in input){
+      if(i == 'x' || i == 'X'){
+      sum1++;
+      }
+    }
+    foreach(char i in input){
+      if(i == 'o' || i == 'O'){
+      sum2++;
+      }
+    }
+    if(sum1 == sum2)
+      return true;
+    if(sum1 == 0 && sum2 == 0)
+      return true;
+    return false;
+  }
+}
