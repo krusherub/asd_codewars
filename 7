@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+class AreTheySame
+{
+  public static bool comp(int[] a, int[] b)
+  {
+    if(a == null || b ==null)
+      return false;
+    if(a.Length != b.Length)
+      return false;
+    int sum = 0;
+    List<int> a1 = new List<int>{};
+    foreach(int j in a){
+      a1.Add(j);
+    }
+    foreach(int i in b){
+      foreach(int j in a1){
+        
+        if(i == Math.Pow(j,2)){
+          sum++;
+          a1.Remove(j);
+          break;
+        }
+      }
+    }
+    if (sum == a.Length)
+      return true;
+    return false;
+  }
+}
