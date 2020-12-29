@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+public static class Kata
+{
+  public static List<char> Disemvowel(string str)
+  {
+    List<char> numbers = new List<char>() {};
+        foreach (char i in str)
+            numbers.Add(i);
+        char[] mas = new char[10] {'a', 'e', 'i' , 'o' ,'u','A','E','I','O','U'};
+        
+        foreach (char s in str)
+        {
+            foreach(char i in mas)
+            {
+                if(i == s)
+                {
+                   
+                    numbers.Remove(i);
+                    break;
+                }
+                
+            }
+        }
+        
+    return numbers;
+  }
+}
