@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+public class DigPow {
+  public static long digPow(int n, int p)
+    {
+        string sum1 = n.ToString();
+        int sum = 0;
+        List<int> numbers = new List<int>() { };
+        foreach (char i in sum1)
+        {
+            //  int.Parse(foo.ToString())
+            numbers.Add(int.Parse(i.ToString()));
+        }
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            sum += (int)Math.Pow(numbers[i], p + i);
+        }
+        
+        if (sum % n == 0)
+            return sum / n;
+        return -1;
+    }
+}
