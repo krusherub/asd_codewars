@@ -1,0 +1,19 @@
+public class Kata
+{
+  public static string CleanString(string s)
+  {
+    string cleaned = "";
+    foreach(char c in s)
+    {
+      if(c != '#'){  cleaned += c;  }
+      else 
+      { 
+        if(cleaned.Length > 0) 
+        { 
+          cleaned = cleaned.Remove(cleaned.Length - 1);
+        }
+      }
+    }
+    return cleaned;
+  }
+}
